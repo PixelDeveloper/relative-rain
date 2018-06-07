@@ -1,0 +1,32 @@
+.navbar {
+  height: 75px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar--style {
+  background-color: indianred;
+}
+.navbar__link {
+  margin-left: 20px;
+  margin-right: 20px;
+  float: left;
+}
+.navbar--link {
+  width: 40px;
+  color: lightgreen;
+}
+a {
+  text-decoration-line: none;
+}
+
+.navbar__linkSeparator {
+  width: 10px;
+  height: 10px;
+  background-color: lightgreen;
+  border-radius: 50%;
+  margin: 8px;
+  float: left;
+}
