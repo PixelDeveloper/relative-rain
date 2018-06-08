@@ -3,31 +3,29 @@ import {Field, reduxForm} from 'redux-form';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css';
 import equipment from '../../modules/equipment';
-// const equipmentTypes = [
-//     {name: "All", value: 0},
-//     {name: "Shirts", value: 1},
-//     {name: "Pants", value: 2},
-//     {name: "Shoes", value: 3}
-// ];
 
-const renderDropdownList = ({ input, data, valueField, textField, placeholder }) =>
+let stuff = ["orange", "black"];
+const renderDropdownList = ({ input, data, valueField, textField, placeholder, defaultValue }) =>
   <DropdownList {...input}
     data={data}
     valueField={valueField}
     textField={textField}
-    placeholder={placeholder} />
+    defaultValue={defaultValue}
+    placeholder={placeholder}
+  />
     
 let EquipmentSelectForm = props => {
-    const { handleSubmit, onChange, items, placeholder } = props
-    return <form onSubmit={handleSubmit}>
+    const { onChange, items, placeholder } = props
+    return <form onSubmit={onChange}>
             <div>
             <Field
                 name="equipmentSelect"
-                component={renderDropdownList}
+                component={renderDropdownList}  
                 data={items}
-                valueField="value"
+                valueField="typeId"
                 textField="name"
                 placeholder={placeholder}
+                // defaultValue={3}
                 />
             </div>
         </form>

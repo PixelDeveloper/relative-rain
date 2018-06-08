@@ -6,9 +6,10 @@ import EquipmentForm from './equipmentInput';
 import EquipmentSelectForm from './equipmentSelect';
 import { reset } from 'redux-form';
 
-let placeholderText = '';
+const defaultSubCategoryId = 3;
 
 class EquipmentComponent extends React.Component {
+
   componentWillMount() {
     this.props.request(0);
   }
@@ -21,6 +22,16 @@ class EquipmentComponent extends React.Component {
 
   submit = values => {
     console.log(values);
+
+    // TODO: need proper validation for the drop down lists. Feck.
+    if(!this.props.equipmentCategoryTypeId) {
+      return false;
+    }
+
+    if(!values.equipmentType){
+      return false;
+    }
+
     values.equipmentCategoryTypeId = this.props.equipmentCategoryTypeId;
     this.props.add(values);
   };
@@ -42,6 +53,7 @@ class EquipmentComponent extends React.Component {
               placeholder="Category"
             />
           </div>
+        <span>{this.props.invalidText}</span>
         </div>
         <div className="equipmentInputContainer">
           <div className="equipmentForm">
@@ -59,6 +71,7 @@ class EquipmentComponent extends React.Component {
           <div className="equipmentInventory">
             <Equipment {...this.props} />
           </div>
+          
         </div>
       </div>
     );
@@ -96,7 +109,8 @@ const mapStateToProps = state => ({
   addingEquipment: state.equipments.addingEquipment,
   equipmentTypes: state.equipments.equipmentTypes,
   equipmentCategoryTypeId: state.equipments.equipmentCategoryTypeId,
-  equipmentCategories: state.equipments.equipmentCategories
+  equipmentCategories: state.equipments.equipmentCategories,
+  invalidText: ""
 });
 
 const mapDispatchToProps = dispatch =>

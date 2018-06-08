@@ -26,7 +26,7 @@ let EquipmentForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Select equipment</label>
+        <span>Select equipment</span>
         <Field
           name="equipmentType"
           component={renderDropdownList}
@@ -34,11 +34,14 @@ let EquipmentForm = props => {
           valueField="typeId"
           textField="name"
           placeholder={placeholder}
+          required
         />
       </div>
-      <div className="inputField">
-        <label htmlFor="name"> Name </label>
-        <Field name="name" component="input" type="text" />
+      <div className="group">
+        <Field name="name" component="input" type="text" required />
+        <span className="highlight"></span>
+        <span className="bar"></span>
+        <label>Name</label>
       </div>
       <button className="inputButton" type="submit">
         {' '}
