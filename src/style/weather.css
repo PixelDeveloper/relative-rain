@@ -2,3 +2,15 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+.weatherContainer {
+float:left;
+}
+
+.weatherInfoContainer {
+  float:left;
+}
+
+.peppText {
+  padding:30px;
+}

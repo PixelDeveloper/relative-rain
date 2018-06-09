@@ -6,10 +6,13 @@ import store, { history } from './store';
 import App from './containers/app';
 
 import 'sanitize.css/sanitize.css';
+import './style/base.css';
+import './style/home.css';
 import './style/index.css';
 import './style/equipment.css';
 import './style/navbar.css';
 import './style/weather.css';
+
 const target = document.querySelector('#root');
 
 render(

@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { request, add } from '../../modules/equipment';
 import EquipmentForm from './equipmentInput';
-import EquipmentSelectForm from './equipmentSelect';
+import DropDownSelectForm from '../inputcomponents/dropdown'
 import { reset } from 'redux-form';
 
 const defaultSubCategoryId = 3;
@@ -38,7 +38,7 @@ class EquipmentComponent extends React.Component {
 
   submitSelection = values => {
     console.log(values);
-    this.props.request(values.equipmentSelect.typeId);
+    this.props.request(values.dropdownSelect.typeId);
   };
 
   render() {
@@ -47,23 +47,21 @@ class EquipmentComponent extends React.Component {
         <div>
           <span className="equipmentTitle">Equipment -> </span>
           <div className="equipmentCategories">
-            <EquipmentSelectForm
+            <DropDownSelectForm
               onChange={this.submitSelection}
               items={this.props.equipmentCategories}
               placeholder="Category"
             />
           </div>
-        <span>{this.props.invalidText}</span>
         </div>
         <div className="equipmentInputContainer">
           <div className="equipmentForm">
-            {/* <EquipmentSelectForm onChange={this.submitSelection} items={items} /> */}
             <EquipmentForm
               onSubmit={this.submit}
               items={this.props.equipmentTypes}
               placeholder={
                 this.props.equipmentTypes.length == 0
-                  ? 'Choose category'
+                  ? 'Choose category above'
                   : 'Type'
               }
             />

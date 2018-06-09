@@ -32,13 +32,13 @@ export default (state = initialState, action) => {
   }
 };
 
-export const request = () => {
+export const request = (city) => {
   return dispatch => {
     dispatch({
       type: REQUEST_WEATHER
     });
 
-    let fetchTask = fetch(`http://localhost:54117/api/WeatherForecast`)
+    let fetchTask = fetch(`http://localhost:54117/api/WeatherForecast/` + city)
       .then(response => response.json())
       .then(data => {
         dispatch({

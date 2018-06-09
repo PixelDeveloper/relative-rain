@@ -8,36 +8,29 @@ import {
   decrement,
   decrementAsync
 } from '../../modules/counter';
+import WeatherComponent from '../weather';
 
 const Home = props => (
   <div>
-    <h1>Home</h1>
-    <p>Count: {props.count}</p>
+    <div className="homeContainer">
+      <div className="generalInfoContainer">
+        {/* TODO: Insert general info component */}
+        <WeatherComponent/>
+      </div>
+      <div className="dailyTipContainer">
+        {/* TODO: Insert daily tip component */}
+        <p> Daily tip! </p>
 
-    <p>
-      <button onClick={props.increment} disabled={props.isIncrementing}>
-        Increment
+        Try hugging a tree, bro!
+      </div>
+    </div>
+    <div className="buttonContainer">
+      <button type="submit" className="defaultButton defaultButton--frontpage" onClick={() => props.changePage()}>
+        <span className="defaultButton--generalText"> Go to equipment -> </span>
       </button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>
-        Increment Async
-      </button>
-    </p>
-
-    <p>
-      <button onClick={props.decrement} disabled={props.isDecrementing}>
-        Decrement
-      </button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>
-        Decrement Async
-      </button>
-    </p>
-
-    <p>
-      <button onClick={() => props.changePage()}>
-        Go to about page via redux
-      </button>
-    </p>
+    </div>
   </div>
+
 );
 
 const mapStateToProps = state => ({
@@ -53,7 +46,7 @@ const mapDispatchToProps = dispatch =>
       incrementAsync,
       decrement,
       decrementAsync,
-      changePage: () => push('/about-us')
+      changePage: () => push('/equipment')
     },
     dispatch
   );

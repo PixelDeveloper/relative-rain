@@ -11,12 +11,12 @@ const renderDropdownList = ({ input, data, valueField, textField, placeholder })
     placeholder={placeholder}
   />
     
-let EquipmentSelectForm = props => {
+let DropDownSelectForm = props => {
     const { onChange, items, placeholder } = props
     return <form onSubmit={onChange}>
             <div>
             <Field
-                name="equipmentSelect"
+                name="dropdownSelect"
                 component={renderDropdownList}  
                 data={items}
                 valueField="typeId"
@@ -28,8 +28,8 @@ let EquipmentSelectForm = props => {
     
 }
 
-EquipmentSelectForm = reduxForm({
-    form: 'equipmentSelectForm' 
-})(EquipmentSelectForm)
+DropDownSelectForm = reduxForm({
+    form: 'DropDownSelectForm' 
+})(DropDownSelectForm)
 
-export default EquipmentSelectForm
+export default DropDownSelectForm

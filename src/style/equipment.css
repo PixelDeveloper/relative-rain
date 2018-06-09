@@ -64,7 +64,7 @@
 }
 
 .rw-widget > .rw-widget-container {
-  width: 200px;
+  width: 220px;
   margin: 0;
 }
 
@@ -103,7 +103,7 @@ label		 {
 input:focus ~ label, input:valid ~ label		{
   top:-20px;
   font-size:14px;
-  color:#5264AE;
+  color:rgb(82, 174, 82);
 }
 
 /* BOTTOM BARS ================================= */
@@ -114,7 +114,7 @@ input:focus ~ label, input:valid ~ label		{
   width:0;
   bottom:1px; 
   position:absolute;
-  background:#5264AE; 
+  background:rgb(82, 174, 82); 
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
@@ -151,14 +151,14 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
+	from { background:rgb(82, 174, 82); }
   to 	{ width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
+	from { background:rgb(82, 174, 82); }
   to 	{ width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-	from { background:#5264AE; }
+	from { background:rgb(82, 174, 82); }
   to 	{ width:0; background:transparent; }
 }

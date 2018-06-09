@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, submit } from 'redux-form';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css';
 
@@ -21,10 +21,11 @@ const renderDropdownList = ({
 
 // Ok so const makes a component only available inside the file it's declared.
 let EquipmentForm = props => {
-  const { handleSubmit, items, placeholder } = props;
+
+  const { handleSubmit, items, placeholder, dispatch, error } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form name="equipmentForm" onSubmit={handleSubmit}>
       <div>
         <span>Select equipment</span>
         <Field
@@ -43,9 +44,12 @@ let EquipmentForm = props => {
         <span className="bar"></span>
         <label>Name</label>
       </div>
-      <button className="inputButton" type="submit">
+      {/* <div className="inputButton" >
         {' '}
         Add{' '}
+      </div> */}
+      <button type="submit" className="defaultButton defaultButton--frontpage">
+        <span className="defaultButton--generalText"> ADD </span>
       </button>
     </form>
   );
