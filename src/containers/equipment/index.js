@@ -3,8 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { request, add } from '../../modules/equipment';
 import EquipmentForm from './equipmentInput';
-import DropDownSelectForm from '../inputcomponents/dropdown'
-import { reset } from 'redux-form';
+import {EquipmentCategoryDropDown}  from '../inputcomponents/dropdown'
 
 const defaultSubCategoryId = 3;
 
@@ -47,7 +46,7 @@ class EquipmentComponent extends React.Component {
         <div>
           <span className="equipmentTitle">Equipment -> </span>
           <div className="equipmentCategories">
-            <DropDownSelectForm
+            <EquipmentCategoryDropDown
               onChange={this.submitSelection}
               items={this.props.equipmentCategories}
               placeholder="Category"

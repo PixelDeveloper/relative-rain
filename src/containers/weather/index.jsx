@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
     request
 } from "../../modules/weather";
-import DropDownSelectForm from '../inputcomponents/dropdown'
+import {CityDropDown} from '../inputcomponents/dropdown'
 
 const cities = ['Stockholm', 'Uppsala']
 
@@ -22,7 +22,7 @@ class WeatherComponent extends React.Component {
     render() {
         return <div>
             <div className="citySelectionContainer">
-                <DropDownSelectForm
+                <CityDropDown
                 onChange={this.submitSelection}
                 items={cities}
                 placeholder="City"
