@@ -4,13 +4,38 @@
 }
 
 .weatherContainer {
-float:left;
+  float:left;
+  width:160px;
 }
 
 .weatherInfoContainer {
   float:left;
+  width:100px;
+  height:120px;
 }
 
 .peppText {
   padding:30px;
+}
+
+.citySelectionContainer {
+  width:auto;
+  height:40px;
+  float:left;
+}
+
+.cityContainer {
+  float:left;
+}
+
+.dayContainer {
+  float:left;
+  width:250px;
+  height:40px;
+}
+
+.selectDay {
+  float:left;
+  width:auto;
+  margin-top:5px;
 }

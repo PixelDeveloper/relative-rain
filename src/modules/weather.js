@@ -1,4 +1,5 @@
 import { fetch, addTask } from 'domain-task';
+import PropTypes from 'prop-types';
 
 export const REQUEST_WEATHER = 'weather/REQUEST_WEATHER';
 export const RECEIVE_WEATHER = 'weather/RECEIVE_WEATHER';
@@ -12,7 +13,8 @@ const initialState = {
     temp: '',
     date: '0000-00-00',
     icon: '10d'
-  }
+  },
+
 };
 
 export default (state = initialState, action) => {
@@ -32,18 +34,19 @@ export default (state = initialState, action) => {
   }
 };
 
-export const request = (city) => {
+export const request = (city, day) => {
   return dispatch => {
     dispatch({
       type: REQUEST_WEATHER
     });
 
-    let fetchTask = fetch(`http://localhost:54117/api/WeatherForecast/` + city)
+    let fetchTask = fetch(`http://localhost:54117/api/WeatherForecast/` + city + "/" + day)
       .then(response => response.json())
       .then(data => {
         dispatch({
           type: RECEIVE_WEATHER,
-          weather: data
+          weather: data,
+
         });
       });
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -18,7 +18,7 @@ const Home = props => (
         <WeatherComponent/>
       </div>
       <div className="dailyTipContainer">
-        {/* TODO: Insert daily tip component */}
+        {/* TODO: Insert daily tip component/function */}
         <p> Daily tip! </p>
 
         Try hugging a tree, bro!

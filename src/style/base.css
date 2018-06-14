@@ -53,3 +53,27 @@ button:active {
 }
 
 /***********/
+
+/** small button **/
+
+
+.nextDayButtonContainer {
+    float:left;
+    width:40px;
+    padding:5px;
+  }
+
+.nextButton {
+    width:30px;
+    height:28px;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.nextButton:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.nextButton--frontpage {
+    background-color:goldenrod;
+}
