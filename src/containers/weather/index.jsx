@@ -9,7 +9,7 @@ import { CityDropDown } from '../inputcomponents/dropdown'
 const cities = ['Stockholm', 'Uppsala']
 class WeatherComponent extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             day: 0,
@@ -66,11 +66,17 @@ class WeatherComponent extends React.Component {
                 </div>
                 <div className="dayContainer">
                     <div className="nextDayButtonContainer">
-                        <button className="nextButton nextButton--frontpage" disabled={this.state.day == 0} onClick={this.decrementDay}> <span>{"←"}</span> </button>
+                        <button className="nextButton nextButton--frontpage"
+                            disabled={this.state.day == 0 || this.props.isGettingWeather} onClick={this.decrementDay}>
+                            <span>{"←"}</span>
+                        </button>
                     </div>
                     <div className="selectDay"> {this.props.weather.date} </div>
                     <div className="nextDayButtonContainer">
-                        <button className="nextButton nextButton--frontpage" disabled={this.state.day == 4} onClick={this.incrementDay}> <span>{"→"}</span> </button>
+                        <button className="nextButton nextButton--frontpage"
+                            disabled={this.state.day == 4 || this.props.isGettingWeather} onClick={this.incrementDay}>
+                            <span>{"→"}</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -87,7 +93,7 @@ class WeatherComponent extends React.Component {
             </div>
             <div className="weatherInfoContainer ">
                 <div className="peppText">
-                    
+
                 </div>
             </div>
         </div>

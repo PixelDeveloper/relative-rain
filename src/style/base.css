@@ -10,7 +10,7 @@
     padding:5px;
 }
 
-.defaultButton:hover {
+.defaultButton:hover:enabled {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -39,8 +39,8 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+button:hover:enabled,
+button:focus:enabled {
     background: rgb(250, 189, 36);
 }
 
@@ -48,7 +48,7 @@ button:focus {
     outline:none;
 }
 
-button:active {
+button:active:enabled {
     transform: scale(0.99);
 }
 
@@ -70,8 +70,13 @@ button:active {
     padding: 0;
 }
 
-.nextButton:hover {
+.nextButton:hover:enabled {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.nextButton:disabled{
+    transition: none;
+    box-shadow: none;
+    cursor:auto;
 }
 
 .nextButton--frontpage {
