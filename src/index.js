@@ -12,6 +12,7 @@ import './style/index.css';
 import './style/equipment.css';
 import './style/navbar.css';
 import './style/weather.css';
+import './style/input.css';
 
 const target = document.querySelector('#root');
 

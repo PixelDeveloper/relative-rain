@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-
+  background-color:#297B48;
   display: flex;
   flex-direction: column;
 }
@@ -33,7 +33,14 @@ button:disabled {
   min-height: 100%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  background-color:white;
+  position:relative;
+  top:60px;
+  /* justify-content: center; */
+}
+
+.mainInner {
+  margin-top:20px;
 }
 
 .main--style {

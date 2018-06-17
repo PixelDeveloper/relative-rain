@@ -39,7 +39,7 @@ let EquipmentForm = props => {
         />
       </div>
       <div className="group">
-        <Field name="name" component="input" type="text" required />
+        <Field name="name" className="customInput" component="input" type="text" required />
         <span className="highlight"></span>
         <span className="bar"></span>
         <label>Name</label>

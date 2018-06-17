@@ -44,7 +44,7 @@ class EquipmentComponent extends React.Component {
     return (
       <div>
         <div>
-          <span className="equipmentTitle">Equipment -> </span>
+          <span className="equipmentTitle">Equipment</span>
           <div className="equipmentCategories">
             <EquipmentCategoryDropDown
               onChange={this.submitSelection}
@@ -74,6 +74,71 @@ class EquipmentComponent extends React.Component {
     );
   }
 }
+
+class QuickAddEquipmentComponent extends React.Component {
+
+  componentWillMount() {
+    this.props.request(0);
+  }
+
+  componentWillReceiveProps() {
+    if (this.props.addingEquipment) {
+      this.props.request(this.props.equipmentCategoryTypeId);
+    }
+  }
+
+  submit = values => {
+    console.log(values);
+
+    // TODO: need proper validation for the drop down lists. Feck.
+    if(!this.props.equipmentCategoryTypeId) {
+      return false;
+    }
+
+    if(!values.equipmentType){
+      return false;
+    }
+
+    values.equipmentCategoryTypeId = this.props.equipmentCategoryTypeId;
+    this.props.add(values);
+  };
+
+  submitSelection = values => {
+    console.log(values);
+    this.props.request(values.dropdownSelect.typeId);
+  };
+
+  render() {
+    return (
+      <div>
+        <div>
+          <span className="equipmentTitle">Equipment</span>
+          <div className="equipmentCategories marginBottom">
+            <EquipmentCategoryDropDown
+              onChange={this.submitSelection}
+              items={this.props.equipmentCategories}
+              placeholder="Category"
+            />
+          </div>
+        </div>
+        <div className="equipmentInputContainer equipmentInputContainer__quick">
+          <div className="equipmentForm">
+            <EquipmentForm
+              onSubmit={this.submit}
+              items={this.props.equipmentTypes}
+              placeholder={
+                this.props.equipmentTypes.length == 0
+                  ? 'Choose category above'
+                  : 'Type'
+              }
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
 
 const Equipment = props => (
   <div>
@@ -119,4 +184,6 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(EquipmentComponent);
+export const EquipmentDetails = connect(mapStateToProps, mapDispatchToProps)(EquipmentComponent);
+
+export const QuickAddEquipment = connect(mapStateToProps, mapDispatchToProps)(QuickAddEquipmentComponent);

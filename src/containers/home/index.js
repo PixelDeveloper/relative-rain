@@ -9,9 +9,11 @@ import {
   decrementAsync
 } from '../../modules/counter';
 import WeatherComponent from '../weather';
+import Events from '../prepping/events';
 
 const Home = props => (
-  <div>
+  <div className="homePage">
+  <div className="homeTitle">Haik - Your adventure guide</div>
     <div className="homeContainer">
       <div className="generalInfoContainer">
         {/* TODO: Insert general info component */}
@@ -24,11 +26,13 @@ const Home = props => (
         Try hugging a tree, bro!
       </div>
     </div>
-    <div className="buttonContainer">
+    <div className="buttonContainerHome">
       <button type="submit" className="defaultButton defaultButton--frontpage" onClick={() => props.changePage()}>
         <span className="defaultButton--generalText"> Go to equipment -> </span>
       </button>
     </div>
+    <div className="upcomingEventsTitle">Upcoming events</div>
+    <Events/>
   </div>
 
 );

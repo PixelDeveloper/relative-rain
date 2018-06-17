@@ -1,9 +1,8 @@
 import React, {PropTypes} from 'react';
-
+import EventComponent from './event';
 const Prepping = () => (
   <div>
-    <h1>About Page</h1>
-    <p>Did you get here via Redux?</p>
+    <EventComponent/>
   </div>
 );
 

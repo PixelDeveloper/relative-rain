@@ -2,11 +2,10 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from '../home';
 import Prepping from '../prepping';
-import Equipment from '../equipment';
-import Weather from '../weather';
+import { EquipmentDetails } from '../equipment';
 
 const App = () => (
-  <div>
+  <div className="base">
     <div className="navbar navbar--style">
       <Link to="/" className="navbar__link">
         <span className="navbar--link">Front page</span>
@@ -19,17 +18,14 @@ const App = () => (
       <Link to="/equipment" className="navbar__link">
         <span className="navbar--link">Equipment</span>
       </Link>
-      <span className="navbar__linkSeparator" />
-      <Link to="/weather" className="navbar__link">
-        <span className="navbar--link">Weather</span>
-      </Link>
     </div>
 
     <main className="main main--style">
-      <Route exact path="/" component={Home} />
-      <Route exact path="/prepping" component={Prepping} />
-      <Route exact path="/equipment" component={Equipment} />
-      <Route exact path="/weather" component={Weather} />
+      <div className="mainInner">
+        <Route exact path="/" component={Home} />
+        <Route exact path="/prepping" component={Prepping} />
+        <Route exact path="/equipment" component={EquipmentDetails} />
+      </div>
     </main>
   </div>
 );
