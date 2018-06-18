@@ -27,7 +27,6 @@ let EquipmentForm = props => {
   return (
     <form name="equipmentForm" onSubmit={handleSubmit}>
       <div>
-        <span>Select equipment</span>
         <Field
           name="equipmentType"
           component={renderDropdownList}

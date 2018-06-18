@@ -16,8 +16,7 @@
 
 .defaultButton__small {
     width:150px;
-    margin-top:15px;
-    margin-left:5px;
+    margin-top:10px;
 }
 
 .defaultButton:hover:enabled {
