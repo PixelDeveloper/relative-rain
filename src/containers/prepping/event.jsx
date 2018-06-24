@@ -26,6 +26,7 @@ class EventComponent extends React.Component {
 
     componentWillMount() {
         this.props.request(0);
+        // TODO: Figure out how to to this.
         // this.setState({
         //     events: this.props.events
         // })
