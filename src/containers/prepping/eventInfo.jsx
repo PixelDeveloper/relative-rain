@@ -19,12 +19,16 @@ class EventInfoComponent extends React.Component {
 
     render() {
         return <div className="eventInfoContainer">
-            <p>
                 <ul>
-                    <li> Hej </li>
-                    <li> då </li>
+                    {/* {this.props.currentEvent != null &&
+                    <li key={this.props.currentEvent }>
+                            <span onClick={ () => this.setCurrentEvent(this.props.currentEvent)}>{this.props.currentEvent.name }</span>
+                    </li>
+                    } */}
+                    <li>
+                        {this.props.name}
+                    </li>
                 </ul>
-            </p>
         </div>
     }
 

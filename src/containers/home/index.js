@@ -32,7 +32,8 @@ const Home = props => (
       </button>
     </div>
     <div className="upcomingEventsTitle">Upcoming events</div>
-    <Events/>
+    {/* <Events/> */}
+    Todo: Add service call to get events here. Might need to make this into a component.  
   </div>
 
 );
