@@ -17,35 +17,38 @@ class EventsComponent extends React.Component {
 
     }
 
-    setCurrentEvent = function(values) {
+    setCurrentEvent = function(value) {
         this.setState(({
-            selectedEvent: values
+            selectedEvent: value
         }));
 
-        this.props.setCurrentEvent(values);
+        this.props.selectEvent(value);
     };
 
-    submitSelection = values => {
+    submitSelection = value => {
         
     };
 
     render() {
         return <div className="eventsContainer">
-            <RenderEvents {...this.props}/>
+            <RenderEvents events={this.props.events} click={this.setCurrentEvent}/>
+            <button onClick={this.setCurrentEvent}></button>
         </div>
     }
 
 }
 
-const RenderEvents = props => (
+const RenderEvents = props => {
+    const {events, click} = props;
+    return (
     <ul>
-    {props.events.map(event => (
+    {events.map(event => (
     <li key={event.id}>
-            <span onClick={ () => this.setCurrentEvent(event)}>{event.name}</span>
+            <span onClick={() => click(event)}>{event.name}</span>
     </li>
     ))}
-</ul>
-)
+</ul>)
+}
 
 const mapStateToProps = state => ({
 

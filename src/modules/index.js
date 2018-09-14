@@ -3,6 +3,7 @@ import { routerReducer } from 'react-router-redux';
 import counter from './counter';
 import equipments from './equipment';
 import weather from './weather';
+import event from './event';
 import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
   equipments,
   // form prefix, very important!!!
   form: formReducer,
-  weather
+  weather,
+  event
 });

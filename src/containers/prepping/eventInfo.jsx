@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 class EventInfoComponent extends React.Component {
 
@@ -19,16 +20,41 @@ class EventInfoComponent extends React.Component {
 
     render() {
         return <div className="eventInfoContainer">
-                <ul>
-                    {/* {this.props.currentEvent != null &&
-                    <li key={this.props.currentEvent }>
-                            <span onClick={ () => this.setCurrentEvent(this.props.currentEvent)}>{this.props.currentEvent.name }</span>
-                    </li>
-                    } */}
-                    <li>
-                        {this.props.name}
-                    </li>
-                </ul>
+        <div className="eventInfoTitle">
+            {this.props.name}
+        </div>
+        <div className="eventInfoRow">
+            <div className="eventInfoSubTitleCol eventInfoSubTitle">
+                When: 
+            </div>
+            <div className="eventInfoSubTextCol eventInfoSubText">
+                {moment(this.props.date).format("YYYY-MM-DD")}
+            </div>
+        </div>
+        <div className="eventInfoRow">
+            <div className="eventInfoSubTitleCol eventInfoSubTitle">
+                Where:  
+            </div>
+            <div className="eventInfoSubTextCol eventInfoSubText">
+                {this.props.city}
+            </div>
+        </div>
+        <div className="eventInfoRow">
+            <div className="eventInfoSubTitleCol eventInfoSubTitle">
+                What:  
+            </div>
+            <div className="eventInfoSubTextCol eventInfoSubText">
+                {this.props.description}
+            </div>
+        </div>
+        <div className="eventInfoRow">
+            <div className="eventInfoSubTitleCol eventInfoSubTitle">
+                Activity:  
+            </div>
+            <div className="eventInfoSubTextCol eventInfoSubText">
+                {this.props.eventType}
+            </div>
+        </div>
         </div>
     }
 

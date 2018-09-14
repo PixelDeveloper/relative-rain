@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       };
     case RECEIVE_EVENT:
       return {
-        ...action,
+        events: action.events,
         isGettingEvents: false
       };
     case TRY_ADD_EVENT:
@@ -63,7 +63,7 @@ export const request = eventId => {
         dispatch({
           type: RECEIVE_EVENT,
           events: data.events,
-          eventTypes: data.equipmentTypes,
+          eventTypes: data.eventTypes,
           isGettingEquipment: false,
         });
       });

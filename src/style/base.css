@@ -2,6 +2,10 @@
     background-color:#297B48;
 }
 
+
+html {
+height:100%;
+}
 /***Button styling***/
 
 .defaultButton {

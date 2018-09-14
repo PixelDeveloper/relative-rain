@@ -11,32 +11,37 @@ import PropTypes from 'prop-types';
 import '../../style/event.css';
 
 class EventComponent extends React.Component {
-
     constructor(props) {
         super(props);
-        
-
         this.setCurrentEvent = this.setCurrentEvent.bind(this);
         this.state = {
-            events : [{id: 0, name: "Loading..."}],
+            events : props.events,
             setCurrentEvent: this.setCurrentEvent,
-            currentEvent: {id: 1, name:"kebnekajse"}
+            currentEvent: {id: 1, name:"kebnekajse"},
+            setEvent : this.setCurrentEvent
         };
     };
 
-    componentWillMount() {
+    // Replaced componentWillMount with this because its obselete.
+    componentDidMount() {
         this.props.request(0);
         // TODO: Figure out how to to this.
-        // this.setState({
-        //     events: this.props.events
-        // })
+        this.setState((state, props) => {
+            defaultEvent: props.events
+        })
+    };
+
+    componentWillReceiveProps() {
+        if (this.props.addingEvent) {
+          this.props.request();
+        }
     };
 
     submitSelection = values => {
     };
 
     handleSubmit = values => {
-
+        this.props.add(values);
     };
 
     setCurrentEvent = function(values) {
@@ -47,14 +52,15 @@ class EventComponent extends React.Component {
     }
 
     render() {
+
         return <div className="eventPage">
             <div className="eventColumnLeft">
                 <div className="newEventTitle"> New event </div>
                 <div className="eventContainer">
-                    <EventForm {...this.props} />
+                    <EventForm events={this.props.eventTypes} onSubmit={this.handleSubmit} placeholder="Choose" />
                 </div>
                 <div className="newEventTitle"> Upcoming events </div>
-                <Events {...this.state} />
+                <Events events= {this.props.events} selectEvent={this.setCurrentEvent} />
                 <div className="quickAddEquipment">
                     {/* TODO:Add content <QuickAddEquipment /> */}
 
@@ -69,10 +75,16 @@ class EventComponent extends React.Component {
 
 }
 
+// TODO: Anders added this, to give events an empty array to keep it from crashing on the map function
+// maybe it should be moved to the events file, or maybe it has to be here. Understand.
+EventComponent.defaultProps = {
+    events: []
+};
+
 
 const mapStateToProps = state => ({
     isGettingEvent: state.isGettingEvents,
-    events: state.events,
+    events: state.event.events,
     addingEvent: state.addingEvent,
     eventTypes: state.eventTypes,
 })

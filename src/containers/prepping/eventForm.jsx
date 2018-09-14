@@ -27,18 +27,28 @@ const renderDropdownList = ({
     );
 
 
-const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
+const renderDateTimePicker = ({ input: { onChange, value }, showTime, currentDate }) =>
     <DateTimePicker
         onChange={onChange}
-        format="DD MMM YYYY"
+        format="YYYY-MM-DD"
         time={showTime}
         value={!value ? null : new Date(value)}
+        defaultValue={currentDate}
     />
 
 let EventForm = (props) => {
-    const { handleSubmit, items, placeholder, dispatch, error } = props;
+    const { handleSubmit, placeholder } = props;
 
-    return (<form>
+    return (<form name="eventForm" onSubmit={handleSubmit}>
+        <div className="eventRow">
+            <div className="eventColumnSmall eventInputDescription">Name it!</div>
+            <div className="group groupSmall eventColumnBig">
+                <Field name="name" component="input" type="text" className="customInput" required />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <label>Name</label>
+            </div>
+        </div>
         <div className="eventRow">
             <div className="eventColumnSmall eventInputDescription">Where?</div>
             <div className="group groupSmall eventColumnBig">
@@ -65,9 +75,23 @@ let EventForm = (props) => {
         <div className="eventRow">
             <div className="eventColumnSmall eventInputDescription">When?</div>
             <div className="group groupSmall eventColumnBig">
-                <Field name="eventDate" component={renderDateTimePicker} showTime={false} className="customInput" required />
+                <Field name="date" 
+                component={renderDateTimePicker} 
+                showTime={false} 
+                currentDate={new Date()}
+                className="customInput" 
+                required />
                 <span className="highlight"></span>
                 <span className="bar barSmall"></span>
+            </div>
+        </div>
+        <div className="eventRow">
+        <div className="eventColumnSmall eventInputDescription">Description</div>
+            <div className="group groupSmall eventColumnBig">
+                <Field name="description" component="textarea" type="text" className="customInput" required />
+                <span className="highlight"></span>
+                <span className="bar"></span>
+                <label>Describe</label>
             </div>
         </div>
         <div className="eventRow">
