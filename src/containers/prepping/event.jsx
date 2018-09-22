@@ -5,9 +5,6 @@ import {request, add} from '../../modules/event';
 import EventForm from './eventForm';
 import Events from './events';
 import EventInfo from './eventInfo';
-import { QuickAddEquipment } from '../equipment'
-import { Field, reduxForm } from 'redux-form';
-import PropTypes from 'prop-types';
 import '../../style/event.css';
 
 class EventComponent extends React.Component {
@@ -25,10 +22,6 @@ class EventComponent extends React.Component {
     // Replaced componentWillMount with this because its obselete.
     componentDidMount() {
         this.props.request(0);
-        // TODO: Figure out how to to this.
-        this.setState((state, props) => {
-            defaultEvent: props.events
-        })
     };
 
     componentWillReceiveProps() {
@@ -77,16 +70,16 @@ class EventComponent extends React.Component {
 
 // TODO: Anders added this, to give events an empty array to keep it from crashing on the map function
 // maybe it should be moved to the events file, or maybe it has to be here. Understand.
-EventComponent.defaultProps = {
-    events: []
-};
+// EventComponent.defaultProps = {
+//     events: []
+// };
 
 
 const mapStateToProps = state => ({
-    isGettingEvent: state.isGettingEvents,
+    isGettingEvent: state.event.isGettingEvents,
     events: state.event.events,
-    addingEvent: state.addingEvent,
-    eventTypes: state.eventTypes,
+    addingEvent: state.event.addingEvent,
+    eventTypes: state.event.eventTypes,
 })
 
 const mapDispatchToProps = dispatch =>

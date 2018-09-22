@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js build
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start
 
 PATH: 
   C:\Users\mikae\Downloads\cmder\bin;C:\Users\mikae\Downloads\cmder\vendor\git-for-windows\cmd;C:\Users\mikae\Downloads\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\mikae\Downloads\cmder\vendor\conemu-maximus5;C:\Users\mikae\Downloads\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Users\mikae\AppData\Local\Microsoft\WindowsApps;C:\Users\mikae\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\mikae\AppData\Local\Yarn\bin;;C:\Users\mikae\Downloads\cmder\vendor\git-for-windows\usr\bin;C:\Users\mikae\Downloads\cmder\vendor\git-for-windows\usr\share\vim\vim74;C:\Users\mikae\Downloads\cmder\
@@ -8268,7 +8268,7 @@ Trace:
   Error: Command failed.
   Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c react-scripts build
+  Arguments: /d /s /c react-scripts start
   Directory: C:\innovate
   Output:
   

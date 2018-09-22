@@ -32,7 +32,6 @@ class EventsComponent extends React.Component {
     render() {
         return <div className="eventsContainer">
             <RenderEvents events={this.props.events} click={this.setCurrentEvent}/>
-            <button onClick={this.setCurrentEvent}></button>
         </div>
     }
 
@@ -44,7 +43,7 @@ const RenderEvents = props => {
     <ul>
     {events.map(event => (
     <li key={event.id}>
-            <span onClick={() => click(event)}>{event.name}</span>
+            <span className="mousePointer" onClick={() => click(event)}>{event.name}</span>
     </li>
     ))}
 </ul>)

@@ -9,7 +9,7 @@ import {
   decrementAsync
 } from '../../modules/counter';
 import WeatherComponent from '../weather';
-import Events from '../prepping/events';
+import UpcomingEvents from '../home/upcomingEvents';
 
 const Home = props => (
   <div className="homePage">
@@ -26,14 +26,15 @@ const Home = props => (
         Try hugging a tree, bro!
       </div>
     </div>
+
+    <div className="upcomingEventsTitle">Upcoming events</div>
+    <UpcomingEvents/>
+
     <div className="buttonContainerHome">
       <button type="submit" className="defaultButton defaultButton--frontpage" onClick={() => props.changePage()}>
         <span className="defaultButton--generalText"> Go to equipment -> </span>
       </button>
     </div>
-    <div className="upcomingEventsTitle">Upcoming events</div>
-    {/* <Events/> */}
-    Todo: Add service call to get events here. Might need to make this into a component.  
   </div>
 
 );

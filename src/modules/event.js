@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       };
     case RECEIVE_EVENT:
       return {
-        events: action.events,
+        events: action.events,  
         isGettingEvents: false
       };
     case TRY_ADD_EVENT:

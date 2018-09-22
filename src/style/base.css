@@ -39,7 +39,7 @@ height:100%;
 .buttonContainerHome {
     float:right;
     margin-right:20px;
-    top: 250px;
+    top: -40px;
     position: relative;
 }
 
@@ -105,4 +105,8 @@ button:active:enabled {
 
 .marginBottom {
     margin-bottom:10px;
+}
+
+.mousePointer {
+    cursor: pointer;
 }
