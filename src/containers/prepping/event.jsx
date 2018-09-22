@@ -13,8 +13,7 @@ class EventComponent extends React.Component {
         this.setCurrentEvent = this.setCurrentEvent.bind(this);
         this.state = {
             events : props.events,
-            setCurrentEvent: this.setCurrentEvent,
-            currentEvent: {id: 1, name:"kebnekajse"},
+            currentEvent: {id: -1},
             setEvent : this.setCurrentEvent
         };
     };
@@ -28,9 +27,6 @@ class EventComponent extends React.Component {
         if (this.props.addingEvent) {
           this.props.request();
         }
-    };
-
-    submitSelection = values => {
     };
 
     handleSubmit = values => {
