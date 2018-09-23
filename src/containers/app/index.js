@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import Home from '../home';
 import Prepping from '../prepping';
 import { EquipmentDetails } from '../equipment';

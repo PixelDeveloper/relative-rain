@@ -16,10 +16,6 @@ class UpcomingEventsComponent extends React.Component {
         this.props.request(0);
     }
 
-    submitSelection = value => {
-        
-    };
-
     render() {
         return <div className="upcomingEventsContainer">
             <RenderEvents events={this.props.events}/>
@@ -29,7 +25,7 @@ class UpcomingEventsComponent extends React.Component {
 }
 
 const RenderEvents = props => {
-    const {events, click} = props;
+    const {events} = props;
     return (
 <div>
     {events.map(event => (

@@ -1,5 +1,6 @@
 import { fetch, addTask } from 'domain-task';
 import { reset } from 'redux-form';
+import { devConnection } from './connectionstrings';
 
 export const REQUEST_EQUIPMENT = 'equipments/REQUEST_EQUIPMENT';
 export const RECEIVE_EQUIPMENT = 'equipments/RECEIVE_EQUIPMENT';
@@ -60,7 +61,7 @@ export const request = categoryId => {
     });
 
     let fetchTask = fetch(
-      `http://localhost:54117/api/Equipment?categoryId=` + categoryId
+      devConnection + `/api/Equipment?categoryId=` + categoryId
     )
       .then(response => response.json())
       .then(data => {
@@ -91,7 +92,7 @@ export const add = equipment => {
     });
 
     var postValue = JSON.stringify(equipment);
-    let fetchTask = fetch(`http://localhost:54117/api/Equipment`, {
+    let fetchTask = fetch(devConnection + `/api/Equipment`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

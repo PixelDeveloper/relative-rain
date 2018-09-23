@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import { Field, reduxForm, submit } from 'redux-form';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css';
 
@@ -22,7 +22,7 @@ const renderDropdownList = ({
 // Ok so const makes a component only available inside the file it's declared.
 let EquipmentForm = props => {
 
-  const { handleSubmit, items, placeholder, dispatch, error } = props;
+  const { handleSubmit, items, placeholder } = props;
 
   return (
     <form name="equipmentForm" onSubmit={handleSubmit}>

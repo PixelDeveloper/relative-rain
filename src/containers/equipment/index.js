@@ -3,9 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { request, add } from '../../modules/equipment';
 import EquipmentForm from './equipmentInput';
-import {EquipmentCategoryDropDown}  from '../inputcomponents/dropdown'
-
-const defaultSubCategoryId = 3;
+import {EquipmentCategoryDropDown}  from '../inputcomponents/dropdown';
 
 class EquipmentComponent extends React.Component {
 
@@ -59,7 +57,7 @@ class EquipmentComponent extends React.Component {
               onSubmit={this.submit}
               items={this.props.equipmentTypes}
               placeholder={
-                this.props.equipmentTypes.length == 0
+                this.props.equipmentTypes.length === 0
                   ? 'Choose category above'
                   : 'Type'
               }
@@ -127,7 +125,7 @@ class QuickAddEquipmentComponent extends React.Component {
               onSubmit={this.submit}
               items={this.props.equipmentTypes}
               placeholder={
-                this.props.equipmentTypes.length == 0
+                this.props.equipmentTypes.length === 0
                   ? 'Choose category above'
                   : 'Type'
               }

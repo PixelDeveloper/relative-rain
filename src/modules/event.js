@@ -1,5 +1,6 @@
 import { fetch, addTask } from 'domain-task';
 import { reset } from 'redux-form';
+import {devConnection} from './connectionstrings';
 
 export const REQUEST_EVENT = 'event/REQUEST_EVENT';
 export const RECEIVE_EVENT = 'event/RECEIVE_EVENT';
@@ -56,7 +57,7 @@ export const request = eventId => {
     });
 
     let fetchTask = fetch(
-      `http://localhost:54117/api/Event`
+      devConnection + `/api/Event`
     )
       .then(response => response.json())
       .then(data => {
@@ -85,7 +86,7 @@ export const add = event => {
     });
 
     var postValue = JSON.stringify(event);
-    let fetchTask = fetch(`http://localhost:54117/api/Event`, {
+    let fetchTask = fetch(devConnection + `/api/Event`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

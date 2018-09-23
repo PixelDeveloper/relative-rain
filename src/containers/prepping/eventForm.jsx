@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { Field, reduxForm, submit } from 'redux-form';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import moment from 'moment';

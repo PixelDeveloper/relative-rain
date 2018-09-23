@@ -1,5 +1,5 @@
 import { fetch, addTask } from 'domain-task';
-import PropTypes from 'prop-types';
+import {devConnection} from './connectionstrings';
 
 export const REQUEST_WEATHER = 'weather/REQUEST_WEATHER';
 export const RECEIVE_WEATHER = 'weather/RECEIVE_WEATHER';
@@ -40,7 +40,7 @@ export const request = (city, day) => {
       type: REQUEST_WEATHER
     });
 
-    let fetchTask = fetch(`http://localhost:54117/api/WeatherForecast/` + city + "/" + day)
+    let fetchTask = fetch(devConnection + `/api/WeatherForecast/` + city + "/" + day)
       .then(response => response.json())
       .then(data => {
         dispatch({

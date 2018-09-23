@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -67,14 +67,14 @@ class WeatherComponent extends React.Component {
                 <div className="dayContainer">
                     <div className="nextDayButtonContainer">
                         <button className="nextButton nextButton--frontpage"
-                            disabled={this.state.day == 0 || this.props.isGettingWeather} onClick={this.decrementDay}>
+                            disabled={this.state.day === 0 || this.props.isGettingWeather} onClick={this.decrementDay}>
                             <span>{"←"}</span>
                         </button>
                     </div>
                     <div className="selectDay"> {this.props.weather.date} </div>
                     <div className="nextDayButtonContainer">
                         <button className="nextButton nextButton--frontpage"
-                            disabled={this.state.day == 4 || this.props.isGettingWeather} onClick={this.incrementDay}>
+                            disabled={this.state.day === 4 || this.props.isGettingWeather} onClick={this.incrementDay}>
                             <span>{"→"}</span>
                         </button>
                     </div>
@@ -82,7 +82,7 @@ class WeatherComponent extends React.Component {
             </div>
             <div className="weatherContainer">
                 <div className="city">
-                    {this.props.weather.city} <span><img src={"http://openweathermap.org/img/w/" + this.props.weather.icon + ".png"} /> </span>
+                    {this.props.weather.city} <span><img alt="no icon" src={"http://openweathermap.org/img/w/" + this.props.weather.icon + ".png"} /> </span>
                 </div>
                 <div>
                     {this.props.weather.weather}/{this.props.weather.weatherDescription}
