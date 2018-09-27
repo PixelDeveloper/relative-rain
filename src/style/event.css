@@ -9,6 +9,7 @@
     padding-left: 10px;
     padding-top:0;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color:white;
 }
 
 .eventsContainer {
@@ -17,6 +18,7 @@
     padding:10px;
     margin-top:10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color:white;
 }
 
 .upcomingEventsContainer {
@@ -25,6 +27,7 @@
     padding:10px;
     margin-top:10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color:white;
 }
 
 .upcomingEventMain {
@@ -42,6 +45,24 @@
 .upcomingEventsRow {
     margin-left:25px;
 }
+.upcomingEventPadding {
+    padding-left:15px;
+}
+
+.headingPanel {
+    width:auto;
+    height:40px;
+    padding:5px;
+    border: 1px solid rgb(189, 189, 189);
+}
+
+.panelContent {
+    width:auto; 
+    padding:5px;
+    border-left: 1px solid rgb(189, 189, 189);
+    border-right: 1px solid rgb(189, 189, 189);
+    border-bottom: 1px solid rgb(189, 189, 189);
+}
 
 .eventInfoContainer {
     width:300px;
@@ -50,6 +71,7 @@
     margin-top:10px;
     margin-left:20px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color:white;
 }
 
 .eventInfoRow {

@@ -32,7 +32,7 @@ const Home = props => (
 
     <div className="buttonContainerHome">
       <button type="submit" className="defaultButton defaultButton--frontpage" onClick={() => props.changePage()}>
-        <span className="defaultButton--generalText"> Go to equipment -> </span>
+        <span className="defaultButton--generalText"> View equipment </span>
       </button>
     </div>
   </div>

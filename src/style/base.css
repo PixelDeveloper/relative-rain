@@ -88,6 +88,7 @@ button:active:enabled {
     height:28px;
     border-radius: 10px;
     padding: 0;
+    transition: all 0.2s;
 }
 
 .nextButton:hover:enabled {
@@ -109,4 +110,31 @@ button:active:enabled {
 
 .mousePointer {
     cursor: pointer;
+}
+
+.pullLeft {
+    float:left;
+}
+.pullRight {
+    float:right;
+}
+.imgAlign {
+    margin-top:-4px;
+
+}
+
+.imgSpin45 {
+    transition:all 0.8s;
+}
+.imgSpin45:hover {
+    -webkit-transform: rotate(45deg);
+    transform:rotate(45deg);
+}
+
+
+.circle {
+    border-radius: 50%;
+    height:64px;
+    width: 64px;
+    background-color:green;
 }

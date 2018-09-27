@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { request } from '../../modules/event';
 import moment from 'moment';
+import li_icon from '../../images/li_icon.png';
 
 class UpcomingEventsComponent extends React.Component {
 
@@ -30,13 +31,24 @@ const RenderEvents = props => {
 <div>
     {events.map(event => (
     <div className="upcomingEvent" key={event.id}>
-            <span className="upcomingEventMain">{event.name} - {moment(event.date).format("YYYY-MM-DD")}</span>
+        <div className="headingPanel">
+            <div className="upcomingEventMain pullLeft">{event.name}</div>
+            <div className="upcomingEventMain pullRight">{moment(event.date).format("YYYY-MM-DD")}</div>
+        </div>
+        <div className="panelContent">
             <div className="upcomingEventsRow">
-                Happens in <span>{moment(event.date, "YYYYMMDD").fromNow()} </span>
+                <img src={li_icon} alt={li_icon} className="imgAlign imgSpin45"/>
+                <span className="upcomingEventPadding">  
+                    Happens in <span className="upcomingEventsCity">{moment(event.date, "YYYYMMDD").fromNow()} </span>
+                </span>
             </div>
             <div className="upcomingEventsRow">
-                Takes place in <span className="upcomingEventsCity"> {event.city}</span>
+                <img src={li_icon} alt={li_icon} className="imgAlign imgSpin45"/>
+                <span className="upcomingEventPadding">  
+                    Takes place in <span className="upcomingEventsCity"> {event.city}</span>
+                </span>
             </div>
+        </div>
     </div>
     ))}
 </div>)

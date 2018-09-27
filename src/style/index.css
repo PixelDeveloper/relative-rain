@@ -33,7 +33,7 @@ button:disabled {
   min-height: 900px;
   margin: auto;
   display: flex;
-  background-color:white;
+  background-color:#7BB992;
   position:relative;
   top:60px;
   /* justify-content: center; */
